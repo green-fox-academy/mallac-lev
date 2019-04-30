@@ -1,6 +1,6 @@
 pipeline {
   environment {
-    registry = "czakoilevente / mallac-lev"
+    registry = "czakoilevente/mallac-lev"
     dockerCred = 'czakoilevente'
     dockerImage = ''
   }
