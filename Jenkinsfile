@@ -23,7 +23,7 @@ pipeline {
       steps{
         script {
           docker.withRegistry( '', dockerCred ) {
-            sh 'docker push czakoilevente/mallac-lev:latest'
+            sh 'docker push czakoilevente/mallac-lev'
           }
         }
       }
