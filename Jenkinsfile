@@ -33,7 +33,7 @@ pipeline {
         branch 'master'
       }
       steps{
-        withCredentials([[$class: 'AmazonWebServicesCredentialsBinding', accessKeyVariable: 'AWS_ACCESS_KEY_ID', credentialsId: 'malachitedevops', secretKeyVariable: 'AWS_SECRET_ACCESS_KEY']]) {
+        withCredentials([[$class: 'AmazonWebServicesCredentialsBinding', accessKeyVariable: 'AWS_ACCESS_KEY_ID', credentialsId: '42bf03de-054f-439d-ae4b-c9deb7303a7a', secretKeyVariable: 'AWS_SECRET_ACCESS_KEY']]) {
           sh 'pip install awsebcli --upgrade --user'
           sh 'eb deploy green --version app-c5f1-190425_140158'
         }
