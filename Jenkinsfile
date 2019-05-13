@@ -1,7 +1,7 @@
 pipeline {
   environment {
     registry = "czakoilevente/mallac-lev"
-    dockerCred = 'czakoilevente-docker'
+    registryCredential = 'czakoilevente-docker'
     dockerImage = ''
   }
   agent any
