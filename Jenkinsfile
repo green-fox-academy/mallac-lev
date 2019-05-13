@@ -1,7 +1,7 @@
 pipeline {
   environment {
     registry = "czakoilevente/mallac-lev"
-    dockerCred = 'czakoilevente'
+    dockerCred = 'czakoilevente-docker'
     dockerImage = ''
   }
   agent any
@@ -33,9 +33,9 @@ pipeline {
         branch 'master'
       }
       steps{
-        withCredentials([[$class: 'AmazonWebServicesCredentialsBinding', accessKeyVariable: 'AWS_ACCESS_KEY_ID', credentialsId: 'lev-aws-adm', secretKeyVariable: 'AWS_SECRET_ACCESS_KEY']]) {
+        withCredentials([[$class: 'AmazonWebServicesCredentialsBinding', accessKeyVariable: 'AWS_ACCESS_KEY_ID', credentialsId: 'bubuska-eb', secretKeyVariable: 'AWS_SECRET_ACCESS_KEY']]) {
           sh 'pip install awsebcli --upgrade --user'
-          sh 'eb deploy green --version app-c5f1-190425_140158'
+          sh 'eb deploy bubuska --version app-c5f1-190425_140158'
         }
       }
     }
