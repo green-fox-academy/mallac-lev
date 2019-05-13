@@ -1,7 +1,7 @@
 {
   "AWSEBDockerrunVersion": "1",
   "Image":{
-    "Name": "czakoilevente/mallac.lev"
+    "Name": "czakoilevente/mallac-lev"
   },
     "Ports": [       {
       "ContainerPort": "3000",
