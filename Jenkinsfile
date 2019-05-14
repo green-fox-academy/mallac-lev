@@ -36,6 +36,7 @@ pipeline {
         withCredentials([[$class: 'AmazonWebServicesCredentialsBinding', accessKeyVariable: 'AWS_ACCESS_KEY_ID', credentialsId: 'bubuska-eb', secretKeyVariable: 'AWS_SECRET_ACCESS_KEY']]) {
           sh 'pip install awsebcli --upgrade --user'
           sh 'eb deploy Bubuska-env --version mallac-lev-1.0.123'
+          sh 'eb init --debug'
         }
       }
     }
