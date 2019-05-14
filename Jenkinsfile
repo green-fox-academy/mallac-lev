@@ -19,11 +19,11 @@ pipeline {
         }
       }
     }
-   stage('<>Deploy Image<>') {
+   stage('Deploy Image to DockerHub') {
       steps{
         script {
           docker.withRegistry( '', dockerCred ) {
-            sh 'docker push <>docker_user_name/docker_image_name:version<>'
+            sh 'docker push czakoilevente/mallac-lev'
          }
        }
      }
