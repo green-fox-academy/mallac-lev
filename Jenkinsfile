@@ -18,16 +18,7 @@ pipeline {
           docker.build registry + ":$BUILD_NUMBER"
         }
       }
-    }
-    stage('Deploy Image') {
-      steps{
-        script {
-          docker.withRegistry( '', dockerCred ) {
-            sh 'docker push czakoilevente/mallac-lev'
-          }
-        }
-      }
-    }
+    } 
     stage('Deploy to EB') {
       when {
         branch 'master'
