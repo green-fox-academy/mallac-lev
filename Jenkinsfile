@@ -36,7 +36,7 @@ pipeline {
       steps{
         withCredentials([[$class: 'AmazonWebServicesCredentialsBinding', accessKeyVariable: 'AWS_ACCESS_KEY_ID', credentialsId: 'bubuska-eb', secretKeyVariable: 'AWS_SECRET_ACCESS_KEY']]) {
           sh 'pip install awsebcli --upgrade --user'
-          sh 'eb deploy Bubuska-env --version bubuska-source'
+          sh 'eb deploy Bubuska-env --version Dockerrun.aws'
         }
       }
     }
