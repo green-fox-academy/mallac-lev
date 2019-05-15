@@ -23,7 +23,7 @@ pipeline {
    stage('Deploy Image') {
       steps{
         script {
-          docker.withRegistry( '', registryCredential ) {
+          docker.withRegistry( '', dockerCred ) {
             dockerImage.push()
             dockerImage.push('latest')
           }
