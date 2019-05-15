@@ -19,16 +19,7 @@ pipeline {
         }
       }
     }
-   stage('Deploy Image to DockerHub') {
-      steps{
-        script {
-          docker.withRegistry( '', dockerCred ) {
-            sh 'docker push czakoilevente/mallac-lev'
-         }
-       }
-     }
-   }
-    stage('Deploy to EB') {
+   stage('Deploy to EB') {
       when {
         branch 'master'
       }
