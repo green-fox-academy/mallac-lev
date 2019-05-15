@@ -20,6 +20,16 @@ pipeline {
         }
       }
     }
+   stage('Deploy Image') {
+      steps{
+        script {
+          docker.withRegistry( '', registryCredential ) {
+            dockerImage.push()
+            dockerImage.push('latest')
+          }
+        }
+      }
+    }
    stage('Deploy to EB') {
       when {
         branch 'master'
