@@ -35,8 +35,7 @@ pipeline {
       steps{
         withCredentials([[$class: 'AmazonWebServicesCredentialsBinding', accessKeyVariable: 'AWS_ACCESS_KEY_ID', credentialsId: 'bubuska-eb', secretKeyVariable: 'AWS_SECRET_ACCESS_KEY']]) {
           sh 'pip install awsebcli --upgrade --user'
-          sh 'eb status --verbose'
-          sh 'eb health --refresh'
+          sh 'eb init bubuska --tags elasticbeanstalk:environment-id=e-vpmkrwkirg'
           sh 'eb deploy Bubuska-env --version mallac-lev'
         }
       }
