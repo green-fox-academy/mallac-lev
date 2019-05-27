@@ -1,7 +1,3 @@
-# mallac-lev
-
-## Jenkins Pipeline documentation
-
 [First source](https://github.com/green-fox-academy/czakoilevente/blob/master/project-phase/sprint3/Multibranch_jenkins_pipeline_docuentation.md)
 
 # Jenkins multibranch pipeline using AWS EB CLI
