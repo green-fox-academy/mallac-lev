@@ -9,7 +9,8 @@ pipeline {
     stage('Testing') {
       steps {
         sh 'npm init -y'
-        sh 'npm install'        
+        sh 'npm install' 
+        sh 'node anagramtest.js'       
         }
       }
     stage('Building image') {
