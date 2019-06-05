@@ -10,7 +10,7 @@ pipeline {
       steps {
         sh 'npm init -y'
         sh 'npm install' 
-        sh 'node anagramtest.js'C       
+        sh 'node anagramtest.js'       
         }
       }
     stage('Building image') {
